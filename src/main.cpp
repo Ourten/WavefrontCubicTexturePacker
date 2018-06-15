@@ -15,13 +15,13 @@ std::vector<std::string> split(const std::string &basic_string, char i);
 int main()
 {
     int width, height, bpp;
-    unsigned char *rgb = stbi_load("resources/belt.png", &width, &height, &bpp, 3);
+    unsigned char *rgb = stbi_load("resources/fluidpipe_cast_iron_small.png", &width, &height, &bpp, 3);
 
     std::cout << "Width: " << width << " Height: " << height << std::endl;
 
     std::vector<std::pair<float, float>> uvParts;
 
-    std::ifstream in("resources/belt.obj");
+    std::ifstream in("resources/fluidpipe_iron_small.obj");
 
     for (std::string line(" "); getline(in, line);)
     {
@@ -56,10 +56,14 @@ int main()
     }
 
     blocks.sort();
+
+    int totalArea = 0;
     for (Block block : blocks)
     {
+        totalArea += block.getArea();
         std::cout << block << std::endl;
     }
+    std::cout << "Area: "<<totalArea << std::endl;
 
     return 0;
 }

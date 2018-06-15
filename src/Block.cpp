@@ -62,6 +62,11 @@ float Block::getHeight() const
     return endY - startY;
 }
 
+float Block::getArea() const
+{
+    return getWidth() * getHeight();
+}
+
 bool Block::operator<(const Block &rhs) const
 {
     return std::max(this->getWidth(), this->getHeight()) < std::max(rhs.getWidth(), rhs.getHeight());

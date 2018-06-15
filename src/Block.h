@@ -35,6 +35,8 @@ public:
 
     float getHeight() const;
 
+    float getArea() const;
+
     friend std::ostream &operator<<(std::ostream &os, const Block &block);
 
     bool operator<(const Block &rhs) const;
