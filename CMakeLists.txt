@@ -5,4 +5,4 @@ set(CMAKE_CXX_STANDARD 17)
 
 FILE(COPY resources DESTINATION "${CMAKE_BINARY_DIR}")
 
-add_executable(WavefrontTexturePacker src/main.cpp library/stb_image.h)
+add_executable(WavefrontTexturePacker src/main.cpp library/stb_image.h src/Block.cpp src/Block.h)
