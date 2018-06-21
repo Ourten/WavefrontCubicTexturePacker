@@ -11,31 +11,31 @@
 class Block
 {
 private:
-    float startX, startY, endX, endY;
+    int startX, startY, endX, endY;
 public:
-    Block(float startX, float startY, float endX, float endY);
+    Block(int startX, int startY, int endX, int endY);
 
-    float getStartX() const;
+    int getStartX() const;
 
-    float getStartY() const;
+    int getStartY() const;
 
-    float getEndX() const;
+    int getEndX() const;
 
-    float getEndY() const;
+    int getEndY() const;
 
-    void setStartX(float startX);
+    void setStartX(int startX);
 
-    void setStartY(float startY);
+    void setStartY(int startY);
 
-    void setEndX(float endX);
+    void setEndX(int endX);
 
-    void setEndY(float endY);
+    void setEndY(int endY);
 
-    float getWidth() const;
+    int getWidth() const;
 
-    float getHeight() const;
+    int getHeight() const;
 
-    float getArea() const;
+    int getArea() const;
 
     friend std::ostream &operator<<(std::ostream &os, const Block &block);
 
@@ -46,6 +46,10 @@ public:
     bool operator<=(const Block &rhs) const;
 
     bool operator>=(const Block &rhs) const;
+
+    bool operator==(const Block &rhs) const;
+
+    bool operator!=(const Block &rhs) const;
 };
 
 

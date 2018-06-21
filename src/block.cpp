@@ -2,9 +2,9 @@
 // Created by Ourten on 14/06/2018.
 //
 
-#include "Block.h"
+#include "block.h"
 
-Block::Block(float startX, float startY, float endX, float endY)
+Block::Block(int startX, int startY, int endX, int endY)
 {
     this->startX = startX;
     this->startY = startY;
@@ -12,59 +12,72 @@ Block::Block(float startX, float startY, float endX, float endY)
     this->endY = endY;
 }
 
-float Block::getStartX() const
+int Block::getStartX() const
 {
     return startX;
 }
 
-float Block::getStartY() const
+int Block::getStartY() const
 {
     return startY;
 }
 
-float Block::getEndX() const
+int Block::getEndX() const
 {
     return endX;
 }
 
-float Block::getEndY() const
+int Block::getEndY() const
 {
     return endY;
 }
 
-void Block::setStartX(float startX)
+void Block::setStartX(int startX)
 {
     Block::startX = startX;
 }
 
-void Block::setStartY(float startY)
+void Block::setStartY(int startY)
 {
     Block::startY = startY;
 }
 
-void Block::setEndX(float endX)
+void Block::setEndX(int endX)
 {
     Block::endX = endX;
 }
 
-void Block::setEndY(float endY)
+void Block::setEndY(int endY)
 {
     Block::endY = endY;
 }
 
-float Block::getWidth() const
+int Block::getWidth() const
 {
     return endX - startX;
 }
 
-float Block::getHeight() const
+int Block::getHeight() const
 {
     return endY - startY;
 }
 
-float Block::getArea() const
+int Block::getArea() const
 {
     return getWidth() * getHeight();
+}
+
+bool Block::operator==(const Block &rhs) const
+{
+    return this->startX == rhs.startX &&
+           this->startY == rhs.startY &&
+           this->endX == rhs.endX &&
+           this->endY == rhs.endY;
+}
+
+bool Block::operator!=(const Block &rhs) const
+{
+    return !(rhs == *this);
 }
 
 bool Block::operator<(const Block &rhs) const
