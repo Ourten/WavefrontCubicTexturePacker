@@ -12,7 +12,7 @@ bool isTexPartEquals(Image &image, Block first, Block second);
 
 void copyTex(Image &srcImg, Image &dstImg, Block src, Block dst);
 
-void deleteSimilarBlocks(Image &inputImg, std::vector<Block> &blocks);
+std::vector<std::pair<Block, Block>> deleteSimilarBlocks(Image &inputImg, std::vector<Block> &blocks);
 
 int getNextValidSize(int from, int level);
 

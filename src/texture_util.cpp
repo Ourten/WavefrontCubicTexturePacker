@@ -48,9 +48,11 @@ bool isTexPartEquals(Image &image, Block first, Block second)
     return true;
 }
 
-void deleteSimilarBlocks(Image &inputImg, std::vector<Block> &blocks)
+std::vector<std::pair<Block, Block>> deleteSimilarBlocks(Image &inputImg, std::vector<Block> &blocks)
 {
     int clones = 0;
+
+    std::vector<std::pair<Block, Block>> duplicates;
 
     for (Block block : blocks)
     {
@@ -60,11 +62,13 @@ void deleteSimilarBlocks(Image &inputImg, std::vector<Block> &blocks)
                 isTexPartEquals(inputImg, block, other))
             {
                 blocks.erase(std::remove(blocks.begin(), blocks.end(), other));
+                duplicates.emplace_back(std::pair(other, block));
                 clones++;
             }
         }
     }
     std::cout << "Removed " << clones << " clones" << std::endl;
+    return duplicates;
 }
 
 int getNextSquared(int from)

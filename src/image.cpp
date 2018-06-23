@@ -2,6 +2,7 @@
 // Created by Ourten on 20/06/2018.
 //
 
+#include <iostream>
 #include "image.h"
 
 #define STB_IMAGE_IMPLEMENTATION
@@ -69,6 +70,12 @@ Image Image::load(std::string path)
 {
     int width, height, bpp;
     unsigned char *content = stbi_load(path.c_str(), &width, &height, &bpp, 4);
+
+    if (content == NULL)
+    {
+        std::cerr << "Cannot read the png file " << path << "std::endl";
+        std::exit(EXIT_FAILURE);
+    }
 
     Image image(width, height, bpp);
     image.setContent(content);

@@ -13,6 +13,9 @@
 #include "block.h"
 #include "string_util.h"
 
+void writeBlocks(std::string filePath, int imgWidth, int imgHeight, std::vector<std::pair<Block, Block>> transformed,
+                 std::vector<std::pair<Block, Block>> duplicates);
+
 std::vector<Block> extractBlocks(std::string filePath, int imgWidth, int imgHeight);
 
 #endif //WAVEFRONTTEXTUREPACKER_WAVEFRONT_PARSER_H
