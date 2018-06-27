@@ -110,6 +110,14 @@ void writeBlocks(std::string filePath, std::string originalFile, int inputWidth,
 
         Block extracted = getBlockFromLines(line, secondLine, thirdLine, fourthLine, inputWidth, inputHeight);
 
+        if (!duplicates.empty())
+        {
+            for (std::pair<Block, Block> pair : duplicates)
+            {
+                if (pair.first == extracted)
+                    extracted = pair.second;
+            }
+        }
         for (std::pair<Block, Block> pair : transformed)
         {
             if (pair.first == extracted)

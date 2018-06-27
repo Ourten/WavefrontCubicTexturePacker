@@ -5,7 +5,7 @@
 #include <vector>
 #include <iostream>
 #include <algorithm>
-#include <tgmath.h>
+#include <cmath>
 
 #include "texture_util.h"
 
@@ -75,7 +75,7 @@ int getNextSquared(int from)
 {
     if (from && ((!from) & (from - 1)))
         return from;
-    return static_cast<int>(std::ceil(powf(2, ceilf(log2f(from)))));
+    return static_cast<int>(std::ceil(std::pow(2, std::ceil(std::log2(from)))));
 }
 
 int getNextValidSize(int from, int level)
