@@ -13,7 +13,8 @@
 #include "block.h"
 #include "string_util.h"
 
-void writeBlocks(std::string filePath, int imgWidth, int imgHeight, std::vector<std::pair<Block, Block>> transformed,
+void writeBlocks(std::string filePath, std::string originalFile, int inputWidth, int inputHeight, int outputWidth,
+                 int outputHeight, std::vector<std::pair<Block, Block>> transformed,
                  std::vector<std::pair<Block, Block>> duplicates);
 
 std::vector<Block> extractBlocks(std::string filePath, int imgWidth, int imgHeight);

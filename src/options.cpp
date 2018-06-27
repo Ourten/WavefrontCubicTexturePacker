@@ -2,7 +2,7 @@
 // Created by Ourten on 22/06/2018.
 //
 
-#include "Options.h"
+#include "options.h"
 
 Options::Options(const std::string &objPath, const std::string &pngPath, const std::string &outputPath, int evenLevel,
                  bool packSimilar) : objPath(objPath), pngPath(pngPath), outputPath(outputPath), evenLevel(evenLevel),
@@ -14,7 +14,7 @@ Options Options::fromArgs(int argc, char *argv[])
     std::string pngPath, objPath;
 
     std::string outputPath = "output";
-    int evenLevel = -1;
+    int evenLevel = 0;
     bool packSimilar = false;
 
     for (int i = 1; i < argc; i++)

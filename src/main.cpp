@@ -14,7 +14,7 @@
 #include "texture_util.h"
 #include "block_packer.h"
 #include "wavefront_parser.h"
-#include "Options.h"
+#include "options.h"
 
 int main(int argc, char *argv[])
 {
@@ -30,7 +30,6 @@ int main(int argc, char *argv[])
     for (Block block : blocks)
     {
         totalArea += block.getArea();
-        std::cout << block << std::endl;
     }
 
     std::vector<std::pair<Block, Block>> similarBlocks;
@@ -48,17 +47,18 @@ int main(int argc, char *argv[])
 
     Node root(0, 0, minimalSize, minimalSize);
 
+    std::vector<std::pair<Block, Block>> sortedBlocks = fit(blocks, root, options.getEvenLevel());
     Image outputImg = Image::createBlank(root.getWidth(), root.getHeight(), inputImg.getBpp());
 
-    std::vector<std::pair<Block, Block>> sortedBlocks = fit(blocks, root, options.getEvenLevel());
     std::cout << "Computed Size: " << root.getWidth() << "x" << root.getHeight() << std::endl;
 
     for (std::pair<Block, Block> transformed :  sortedBlocks)
     {
-        std::cout << transformed.second << std::endl;
         copyTex(inputImg, outputImg, transformed.first, transformed.second);
     }
 
     outputImg.write(options.getOutputPath() + ".png");
+    writeBlocks(options.getOutputPath() + ".obj", options.getObjPath(), inputImg.getWidth(), inputImg.getHeight(),
+                outputImg.getWidth(), outputImg.getHeight(), sortedBlocks, similarBlocks);
     return 0;
 }

@@ -73,13 +73,15 @@ std::vector<std::pair<Block, Block>> deleteSimilarBlocks(Image &inputImg, std::v
 
 int getNextSquared(int from)
 {
-    if (from && (!from & (from - 1)))
+    if (from && ((!from) & (from - 1)))
         return from;
     return static_cast<int>(std::ceil(powf(2, ceilf(log2f(from)))));
 }
 
 int getNextValidSize(int from, int level)
 {
+    if (level == 0)
+        return from + 1;
     if (level == -1)
         return getNextSquared(from);
     if (from % ((int) std::pow(2, level)) == 0)

@@ -5,7 +5,6 @@
 #ifndef WAVEFRONTTEXTUREPACKER_NODE_H
 #define WAVEFRONTTEXTUREPACKER_NODE_H
 
-#include <optional>
 #include <memory>
 
 class Node
