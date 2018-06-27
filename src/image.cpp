@@ -3,7 +3,7 @@
 //
 
 #include <iostream>
-#include "image.h"
+#include "../include/image.h"
 
 #define STB_IMAGE_IMPLEMENTATION
 #define STB_IMAGE_WRITE_IMPLEMENTATION

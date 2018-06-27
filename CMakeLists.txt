@@ -7,4 +7,4 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0 -g")
 
 FILE(COPY resources DESTINATION "${CMAKE_BINARY_DIR}")
 
-add_executable(WavefrontTexturePacker src/main.cpp library/stb_image.h src/block.cpp src/block.h src/node.cpp src/node.h library/stb_image_write.h src/image.cpp src/image.h src/texture_util.cpp src/texture_util.h src/string_util.cpp src/string_util.h src/block_packer.cpp src/block_packer.h src/wavefront_parser.cpp src/wavefront_parser.h src/options.cpp src/options.h)
+add_executable(WavefrontTexturePacker src/main.cpp library/stb_image.h src/block.cpp include/block.h src/node.cpp include/node.h library/stb_image_write.h src/image.cpp include/image.h src/texture_util.cpp include/texture_util.h src/string_util.cpp include/string_util.h src/block_packer.cpp include/block_packer.h src/wavefront_parser.cpp include/wavefront_parser.h src/options.cpp include/options.h)

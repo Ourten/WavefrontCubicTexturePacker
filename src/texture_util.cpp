@@ -7,7 +7,7 @@
 #include <algorithm>
 #include <cmath>
 
-#include "texture_util.h"
+#include "../include/texture_util.h"
 
 int getTexIdx(int imgWidth, int bpp, int x, int y)
 {

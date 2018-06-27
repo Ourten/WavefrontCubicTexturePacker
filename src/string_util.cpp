@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 #include <sstream>
-#include "string_util.h"
+#include "../include/string_util.h"
 
 std::vector<std::string> split(const std::string &s, char delimiter)
 {

@@ -2,7 +2,7 @@
 // Created by Ourten on 14/06/2018.
 //
 
-#include "block.h"
+#include "../include/block.h"
 
 Block::Block(int startX, int startY, int endX, int endY)
 {

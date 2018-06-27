@@ -2,7 +2,7 @@
 // Created by Ourten on 21/06/2018.
 //
 
-#include "wavefront_parser.h"
+#include "../include/wavefront_parser.h"
 
 std::pair<double, double> getPointFromLine(const std::string &line)
 {

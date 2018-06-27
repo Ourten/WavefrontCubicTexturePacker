@@ -2,7 +2,7 @@
 // Created by Ourten on 21/06/2018.
 //
 
-#include "block_packer.h"
+#include "../include/block_packer.h"
 
 Node *findNode(Node *root, int width, int height)
 {

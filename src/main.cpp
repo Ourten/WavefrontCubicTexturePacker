@@ -8,13 +8,13 @@
 #include <numeric>
 #include <cmath>
 
-#include "block.h"
-#include "node.h"
-#include "image.h"
-#include "texture_util.h"
-#include "block_packer.h"
-#include "wavefront_parser.h"
-#include "options.h"
+#include "../include/block.h"
+#include "../include/node.h"
+#include "../include/image.h"
+#include "../include/texture_util.h"
+#include "../include/block_packer.h"
+#include "../include/wavefront_parser.h"
+#include "../include/options.h"
 
 int main(int argc, char *argv[])
 {

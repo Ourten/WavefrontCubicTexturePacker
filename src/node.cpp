@@ -2,7 +2,7 @@
 // Created by Ourten on 18/06/2018.
 //
 
-#include "node.h"
+#include "../include/node.h"
 
 
 Node::Node(int x, int y, int width, int height) : x(x), y(y), width(width), height(height)

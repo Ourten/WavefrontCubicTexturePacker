@@ -2,7 +2,7 @@
 // Created by Ourten on 22/06/2018.
 //
 
-#include "options.h"
+#include "../include/options.h"
 
 Options::Options(const std::string &objPath, const std::string &pngPath, const std::string &outputPath, int evenLevel,
                  bool packSimilar) : objPath(objPath), pngPath(pngPath), outputPath(outputPath), evenLevel(evenLevel),
